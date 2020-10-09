@@ -1,7 +1,7 @@
 def find_group_by_name(zabbix_api, name):
     groups = zabbix_api.hostgroup.get(filter={'name': str(name)})
 
-    if len(groups) == 0:
+    if not groups:
         return []
 
     return groups[0]
